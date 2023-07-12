@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<body>
+    <div id="result"></div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: 'https://www.nettruyenmax.com/', // Thay đổi URL này thành URL API thực tế
+            method: 'GET',
+            success: function (response) {
+                $('#result').text(JSON.stringify(response));
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+</script>
+
+</html>
